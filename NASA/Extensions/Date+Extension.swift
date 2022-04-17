@@ -19,9 +19,9 @@ extension Date {
         return Calendar.current.date(byAdding: .day, value: days, to: Date())!
     }
     
-    static func getFormattedDate(date:Date) -> String {
+     func getFormattedDate() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        return dateFormatter.string(from:date)
+        return dateFormatter.string(from: self)
     }
 }

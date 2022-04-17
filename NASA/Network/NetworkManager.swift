@@ -10,10 +10,11 @@ import Foundation
 enum AppError: Error {
     case _404 , _500, ConnectionFailures, parsingError(String)
 }
-
-class NetworkManager {
-    static let shared =  NetworkManager.init()
-    private init() {}
+protocol Network {
+    func fetchData<T>(withUrlRequest urlBuilder: URLBuilder, andResponceType responceType: T.Type, andCompletion completion: @escaping ((Result<T,AppError>)->()) ) where T : Decodable
+}
+class NetworkManager: Network {
+    
     typealias completionType = ((Result<Decodable,AppError>)->())
     typealias errorType = ((Error?)->())
     
@@ -27,9 +28,9 @@ class NetworkManager {
         }
     }
     
-    func fetchData<T>(withUrlRequest urlRequest: URLRequest, andResponceType responceType: T.Type, andCompletion completion: @escaping ((Result<T,AppError>)->()) ) where T : Decodable {
+    func fetchData<T>(withUrlRequest urlBuilder: URLBuilder, andResponceType responceType: T.Type, andCompletion completion: @escaping ((Result<T,AppError>)->()) ) where T : Decodable {
         
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response
+        let task = URLSession.shared.dataTask(with: urlBuilder.urlRequest) { (data, response
                                                                    , error) in
             if let _ = error  {
                 DispatchQueue.main.async {

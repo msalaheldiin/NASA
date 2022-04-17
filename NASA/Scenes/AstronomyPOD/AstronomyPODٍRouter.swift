@@ -16,7 +16,7 @@ class AstronomyPODRouteCoordinator: AstronomyPODCoordinatorProtocol {
         self.navigationController = navigationController
     }
     func start(startDaysValue: Int , endDaysValue: Int) {
-        let interactor = AstronomyPODInteractor()
+        let interactor = AstronomyPODInteractor(network: NetworkManager())
         let presenter = AstronomyPODPresenter.init(interactor: interactor, wirframe: self, startDaysValue: startDaysValue, endDaysValue: endDaysValue)
         interactor.presenter = presenter
         let vc = AstronomyPODViewController(presenter: presenter)
