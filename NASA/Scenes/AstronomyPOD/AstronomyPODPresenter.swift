@@ -65,9 +65,8 @@ extension AstronomyPODPresenter : AstronomyPODInteractorOutputProtocol {
     func astronomyPODLoadedSuccessfully(response: [PODResponse]) {
         
         astronomyPODItems.append(contentsOf: response.reversed().map({PODCellViewModel(item: $0)}))
-        astronomyPODItems.sort(by: { $0.date < $1.date })
-        startDaysValue += 10
-        endDaysValue += 10
+        startDaysValue -= 10
+        endDaysValue -= 10
         view?.reloadData()
     }
     
