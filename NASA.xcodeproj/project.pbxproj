@@ -31,6 +31,7 @@
 		1EB208F028076CD10056587D /* PODCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208EF28076CD10056587D /* PODCellViewModel.swift */; };
 		1EB208F228076EAE0056587D /* PODResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208F128076EAE0056587D /* PODResponse.swift */; };
 		1EB208F6280A3B820056587D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208F5280A3B820056587D /* Date+Extension.swift */; };
+		1EF3107B280F34E20052D574 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF3107A280F34E20052D574 /* EndPoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		1EB208EF28076CD10056587D /* PODCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PODCellViewModel.swift; sourceTree = "<group>"; };
 		1EB208F128076EAE0056587D /* PODResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PODResponse.swift; sourceTree = "<group>"; };
 		1EB208F5280A3B820056587D /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		1EF3107A280F34E20052D574 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				1EB208DD2806345C0056587D /* NetworkManager.swift */,
+				1EF3107A280F34E20052D574 /* EndPoints.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				1EB208DB2806210A0056587D /* PODDetailsContract.swift in Sources */,
 				1EB208DE2806345C0056587D /* NetworkManager.swift in Sources */,
 				1EB208C528061EB40056587D /* AstronomyPODViewController.swift in Sources */,
+				1EF3107B280F34E20052D574 /* EndPoints.swift in Sources */,
 				1EB208CA28061F6E0056587D /* AstronomyPODٍRouter.swift in Sources */,
 				1EB208C828061EE80056587D /* AstronomyPODPresenter.swift in Sources */,
 				1EB208AC28061B9C0056587D /* SceneDelegate.swift in Sources */,

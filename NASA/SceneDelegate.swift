@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController()
         window.rootViewController = navigationController
         self.window = window
-        AstronomyPODRouteCoordinator.init(navigationController: navigationController).start(startDaysValue: -50, endDaysValue: -40)
+        AstronomyPODRouteCoordinator.init(navigationController: navigationController).start(startDaysValue: -10, endDaysValue: -1)
         window.makeKeyAndVisible()
     }
 
