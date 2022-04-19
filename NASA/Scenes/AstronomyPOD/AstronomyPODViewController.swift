@@ -41,7 +41,6 @@ class AstronomyPODViewController: UIViewController {
         
         if offsetY > contentHeight - scrollView.frame.height {
             if presenter.numberOfItems < 50 && isLoadingStarted {
-                print(presenter.numberOfItems,"numberOfItems")
             isLoadingStarted = false
             presenter.fetchNewPhotos()
         }
