@@ -11,7 +11,7 @@ import Foundation
 protocol AstronomyPODViewProtocol: AnyObject {
     var presenter: AstronomyPODPresenterProtocol {get set}
     func reloadData()
-    func showAPIError(errorMessage: String)
+    func errorInloadingData(errorMessage: String)
 }
 
 // MARK: - Presenter

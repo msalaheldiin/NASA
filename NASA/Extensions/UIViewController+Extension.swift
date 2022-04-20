@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    func alert(title: String, message: String) {
+     func alert(title: String, message: String) {
         let actionSheetController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "ok", style: .default, handler: nil)
         actionSheetController.addAction(cancelAction)

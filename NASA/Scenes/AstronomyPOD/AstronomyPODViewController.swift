@@ -62,7 +62,7 @@ extension AstronomyPODViewController : AstronomyPODViewProtocol {
         tableView.reloadData()
     }
     
-    func showAPIError(errorMessage: String) {
+    func errorInloadingData(errorMessage: String) {
         alert(title: "Error", message: errorMessage)
     }
 }

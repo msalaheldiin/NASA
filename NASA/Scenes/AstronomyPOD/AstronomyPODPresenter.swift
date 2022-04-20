@@ -77,7 +77,7 @@ extension AstronomyPODPresenter : AstronomyPODInteractorOutputProtocol {
     }
     
     func astronomyPODLoadeFailed(error: AppError) {
-        view?.showAPIError(errorMessage: error.localizedDescription)
+        view?.errorInloadingData(errorMessage: error.localizedDescription)
       }
 }
 

@@ -52,6 +52,8 @@
 		1EF31099280F44130052D574 /* AppURLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208E0280634D70056587D /* AppURLS.swift */; };
 		1EF3109A280F441E0052D574 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208E32806352A0056587D /* UIImageView+Extension.swift */; };
 		1EF310A628108A3E0052D574 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF310A528108A3E0052D574 /* UIViewController+Extension.swift */; };
+		1EF310A72810925F0052D574 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF310A528108A3E0052D574 /* UIViewController+Extension.swift */; };
+		1EF310A9281093C80052D574 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF310A8281093C80052D574 /* Mocks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,7 @@
 		1EF31080280F3F480052D574 /* NASATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF31082280F3F480052D574 /* NASATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASATests.swift; sourceTree = "<group>"; };
 		1EF310A528108A3E0052D574 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		1EF310A8281093C80052D574 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				1EF31082280F3F480052D574 /* NASATests.swift */,
+				1EF310A8281093C80052D574 /* Mocks.swift */,
 			);
 			path = NASATests;
 			sourceTree = "<group>";
@@ -410,8 +414,10 @@
 				1EF31096280F43F80052D574 /* PODDetailsViewController.swift in Sources */,
 				1EF31092280F43B10052D574 /* PODDetailsRouter.swift in Sources */,
 				1EF31083280F3F480052D574 /* NASATests.swift in Sources */,
+				1EF310A72810925F0052D574 /* UIViewController+Extension.swift in Sources */,
 				1EF31098280F44010052D574 /* PODDetailsInteractor.swift in Sources */,
 				1EF3108E280F42FE0052D574 /* PODResponse.swift in Sources */,
+				1EF310A9281093C80052D574 /* Mocks.swift in Sources */,
 				1EF3108B280F40620052D574 /* AstronomyPODPresenter.swift in Sources */,
 				1EF31091280F43920052D574 /* Date+Extension.swift in Sources */,
 				1EF3108C280F416A0052D574 /* NetworkManager.swift in Sources */,

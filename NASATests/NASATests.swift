@@ -9,37 +9,6 @@ import XCTest
 @testable import NASA
 
 
-class MockSuccessInteractor: AstronomyPODInteractorProtocol {
-    var presenter: AstronomyPODInteractorOutputProtocol?
-    func getAstronomyPOD(startDate: String, endDate: String) {
-        presenter?.astronomyPODLoadedSuccessfully(response: [PODResponse(copyright: "Wang LetianEyes at Night", date: "2022-04-10", explanation: "Was this image of the Moon's surface", hdurl: "", mediaType: "image", serviceVersion: "v1", title: "Shadows at the Moon's South Pole", url: "https://apod.nasa.gov/apod/image/2204/SouthPoleShadows_LRO_960.jpg")])
-    }
-}
-
-class MockFailurInteractor: AstronomyPODInteractorProtocol {
-    var presenter: AstronomyPODInteractorOutputProtocol?
-    
-    func getAstronomyPOD(startDate: String, endDate: String) {
-        presenter?.astronomyPODLoadeFailed(error: .ConnectionFailures)
-    }
-}
-
-class AstronomyPODViewMock: AstronomyPODViewProtocol {
-    var presenter: AstronomyPODPresenterProtocol
-    init(presenter: AstronomyPODPresenterProtocol) {
-        self.presenter = presenter
-    }
-    var dataSuccessed = false
-    var errorHappended = false
-    func reloadData() {
-        dataSuccessed = true
-    }
-    
-    func errorInloadingMethods(errorMessage: String) {
-        errorHappended = true
-    }
-}
-
 class NASATests: XCTestCase {
     let promise = XCTestExpectation(description: "Fetch Completed")
 
@@ -66,29 +35,31 @@ class NASATests: XCTestCase {
         }
     }
     
-    func testAPISuccess(){
+    func testPODDataLoadedSuccessfully(){
+        
         let interactor = MockSuccessInteractor()
         let navigationController = UINavigationController()
         let wireFrame = AstronomyPODRouteCoordinator(navigationController: navigationController)
         let presenter = AstronomyPODPresenter(interactor: interactor, wirframe: wireFrame, startDaysValue: -10, endDaysValue: -1)
+        let view = AstronomyPODViewMock(presenter: presenter)
+        presenter.view = view
         interactor.presenter = presenter
-        presenter.fetchNewPhotos()
-        promise.fulfill()
-        wait(for: [promise], timeout: 1)
-        assert(presenter.numberOfItems > 0)
+        presenter.viewDidLoad()
+        assert(view.dataSuccessed)
         
     }
     
-    func testAPIFail(){
+    func testPODErrorInloadingData(){
 
         let interactor = MockFailurInteractor()
         let navigationController = UINavigationController()
         let wireFrame = AstronomyPODRouteCoordinator(navigationController: navigationController)
         let presenter = AstronomyPODPresenter(interactor: interactor, wirframe: wireFrame, startDaysValue: -10, endDaysValue: -1)
+        let view = AstronomyPODViewMock(presenter: presenter)
+        presenter.view = view
         interactor.presenter = presenter
-        presenter.fetchNewPhotos()
-        sleep(2)
-        XCTAssertNotNil(presenter.numberOfItems)
+        presenter.viewDidLoad()
+        assert(view.errorHappended)
     }
     
     func testGetFormattedDate(){
