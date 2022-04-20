@@ -9,9 +9,6 @@ import Foundation
 
  
 class PODDetailsInteractor: PODDetailsInteractorProtocol {
-    var presenter: PODDetailsInteractorOutputProtocol?
-    func loadPaymentMethds() {
-            print("")
-        }
-      
+    weak var presenter: PODDetailsInteractorOutputProtocol?
+    
 }

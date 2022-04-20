@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AstronomyPODViewController" customModule="NASA" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="Mbh-2Q-L0g" id="cxE-Er-8WQ"/>
+                <outlet property="activityIndicator" destination="uRK-oM-jQO" id="vks-tY-s6w"/>
+                <outlet property="tableView" destination="IQS-6L-eG1" id="SOo-lw-YVl"/>
                 <outlet property="view" destination="iN0-l3-epB" id="uq1-8q-uue"/>
             </connections>
         </placeholder>
@@ -19,18 +20,23 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mbh-2Q-L0g">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IQS-6L-eG1">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="uRK-oM-jQO">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Mbh-2Q-L0g" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="LAz-DM-Pcf"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Mbh-2Q-L0g" secondAttribute="trailing" id="gDc-A6-pXA"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Mbh-2Q-L0g" secondAttribute="bottom" id="lbo-ux-XYu"/>
-                <constraint firstItem="Mbh-2Q-L0g" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zaw-aA-lib"/>
+                <constraint firstItem="IQS-6L-eG1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="9Rn-Sh-Zqv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="IQS-6L-eG1" secondAttribute="bottom" id="Bee-LU-Gbs"/>
+                <constraint firstItem="uRK-oM-jQO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ENz-oD-aoB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="IQS-6L-eG1" secondAttribute="trailing" id="G0y-df-V0S"/>
+                <constraint firstItem="uRK-oM-jQO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="j23-BW-rTu"/>
+                <constraint firstItem="IQS-6L-eG1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qQv-aT-tZ5"/>
             </constraints>
             <point key="canvasLocation" x="139" y="114"/>
         </view>

@@ -7,11 +7,21 @@
 
 import Foundation
 
+
+
 class AstronomyPODInteractor: AstronomyPODInteractorProtocol {
-   
-    var presenter:AstronomyPODInteractorOutputProtocol?
+    
+    // MARK: - Variables
+    private var network: Network
+    weak var presenter:AstronomyPODInteractorOutputProtocol?
+    
+    // MARK: - Init
+    init(network: Network) {
+        self.network = network
+    }
+    
     func getAstronomyPOD(startDate: String, endDate: String){
-        NetworkManager.shared.fetchData(withUrlRequest: URLRequest.init(url: URL.init(string: AppURLS.nasaPhotos)!), andResponceType: [PODResponse].self, andCompletion: { [weak self] result in
+        network.fetchData(withUrlRequest: APIEndPoint.nasaPhotos(startDate: startDate, endDate: endDate), andResponceType: [PODResponse].self, andCompletion: { [weak self] result in
             switch result {
             case .success(let response):
                 self?.presenter?.astronomyPODLoadedSuccessfully(response: response)

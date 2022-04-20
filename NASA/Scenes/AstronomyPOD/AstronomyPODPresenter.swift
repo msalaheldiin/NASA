@@ -9,17 +9,25 @@ import Foundation
 
 class AstronomyPODPresenter  {
     
+    // MARK: - Variables
     weak var view: AstronomyPODViewProtocol?
     private let interactor: AstronomyPODInteractorProtocol
     let wirframe: AstronomyPODCoordinatorProtocol
     private var astronomyPODItems = [PODCellViewModel]()
     private var startDaysValue: Int
     private var endDaysValue: Int
-    private var startDate = Date()
-    private var endDate =  Date()
+    private var startDate: Date {
+        return Date.changeDaysBy(days: startDaysValue)
+    }
+    private var endDate: Date {
+        return Date.changeDaysBy(days: endDaysValue)
+    }
     
     // MARK: - Init
-    init(interactor: AstronomyPODInteractorProtocol,  wirframe: AstronomyPODCoordinatorProtocol, startDaysValue: Int , endDaysValue: Int) {
+    init(interactor: AstronomyPODInteractorProtocol,
+         wirframe: AstronomyPODCoordinatorProtocol,
+         startDaysValue: Int,
+         endDaysValue: Int) {
         self.interactor = interactor
         self.wirframe = wirframe
         self.startDaysValue = startDaysValue
@@ -27,25 +35,23 @@ class AstronomyPODPresenter  {
     }
 }
 
+// MARK: - AstronomyPODPresenterProtocol
+
 extension AstronomyPODPresenter: AstronomyPODPresenterProtocol {
-    
     var numberOfItems: Int {
         return astronomyPODItems.count
     }
     
-    // MARK: - Life Cycle
     func viewDidLoad() {
-        startDate = Date.changeDaysBy(days: startDaysValue)
-        endDate = Date.changeDaysBy(days: startDaysValue)
-        interactor.getAstronomyPOD(startDate: Date.getFormattedDate(date:startDate), endDate: Date.getFormattedDate(date:endDate))
+        view?.startAnimating()
+        fetchNewPhotos()
     }
     
     func fetchNewPhotos() {
-        
-            interactor.getAstronomyPOD(startDate: Date.getFormattedDate(date:startDate), endDate: Date.getFormattedDate(date: endDate))
-        
+        interactor.getAstronomyPOD(startDate: startDate.getFormattedDate(),
+                                   endDate: endDate.getFormattedDate())
     }
-     
+    
     func configure(reviewOrderCell cell: PODCellViewProtocol, forIndex indexPath: IndexPath) {
         let model = astronomyPODItems[indexPath.row]
         cell.setItem(model)
@@ -54,23 +60,22 @@ extension AstronomyPODPresenter: AstronomyPODPresenterProtocol {
     func didSelectRowAt(forIndex indexPath: IndexPath) {
         wirframe.navigateToPODDetails(item: astronomyPODItems[indexPath.row])
     }
-    
 }
+
+// MARK: - AstronomyPODInteractorOutputProtocol
 
 extension AstronomyPODPresenter : AstronomyPODInteractorOutputProtocol {
     func astronomyPODLoadedSuccessfully(response: [PODResponse]) {
-        astronomyPODItems.append(contentsOf: response.reversed().map({PODCellViewModel(item: $0)}))
-        startDaysValue += 10
-        endDaysValue += 10
+        let sortedContent = response.sorted(by: {$0.date ?? "" > $1.date ?? ""})
+        astronomyPODItems.append(contentsOf: sortedContent.map({PODCellViewModel(item: $0)}))
+        startDaysValue -= 10
+        endDaysValue -= 10
         view?.reloadData()
-        
-        print(astronomyPODItems.count,"presenter")
+        view?.stopAnimating()
     }
     
     func astronomyPODLoadeFailed(error: AppError) {
-        let days = Date.changeDaysBy(days: -7)
-        print( Date.getFormattedDate(date: days))
-    }
-    
+        view?.errorInloadingData(errorMessage: error.localizedDescription)
+      }
 }
 
