@@ -51,6 +51,7 @@
 		1EF31098280F44010052D574 /* PODDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208D8280620DF0056587D /* PODDetailsInteractor.swift */; };
 		1EF31099280F44130052D574 /* AppURLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208E0280634D70056587D /* AppURLS.swift */; };
 		1EF3109A280F441E0052D574 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208E32806352A0056587D /* UIImageView+Extension.swift */; };
+		1EF310A628108A3E0052D574 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF310A528108A3E0052D574 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		1EF3107A280F34E20052D574 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		1EF31080280F3F480052D574 /* NASATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF31082280F3F480052D574 /* NASATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASATests.swift; sourceTree = "<group>"; };
+		1EF310A528108A3E0052D574 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 			children = (
 				1EB208E32806352A0056587D /* UIImageView+Extension.swift */,
 				1EB208F5280A3B820056587D /* Date+Extension.swift */,
+				1EF310A528108A3E0052D574 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				1EB208CE28061FB40056587D /* AstronomyPODContract.swift in Sources */,
 				1EB208D3280620320056587D /* PODDetailsViewController.swift in Sources */,
 				1EB208CC28061F8B0056587D /* AstronomyPODInteractor.swift in Sources */,
+				1EF310A628108A3E0052D574 /* UIViewController+Extension.swift in Sources */,
 				1EB208F6280A3B820056587D /* Date+Extension.swift in Sources */,
 				1EB208D5280620470056587D /* PODDetailsRouter.swift in Sources */,
 			);

@@ -10,13 +10,15 @@ import Foundation
 
 
 class AstronomyPODInteractor: AstronomyPODInteractorProtocol {
-    private var network: Network
     
+    // MARK: - Variables
+    private var network: Network
+    weak var presenter:AstronomyPODInteractorOutputProtocol?
+    
+    // MARK: - Init
     init(network: Network) {
         self.network = network
     }
-    
-    var presenter:AstronomyPODInteractorOutputProtocol?
     
     func getAstronomyPOD(startDate: String, endDate: String){
         network.fetchData(withUrlRequest: APIEndPoint.nasaPhotos(startDate: startDate, endDate: endDate), andResponceType: [PODResponse].self, andCompletion: { [weak self] result in

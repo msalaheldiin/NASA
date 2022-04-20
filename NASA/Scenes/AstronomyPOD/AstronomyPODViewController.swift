@@ -53,11 +53,17 @@ class AstronomyPODViewController: UIViewController {
 
 // MARK: - AstronomyPODViewProtocol
 extension AstronomyPODViewController : AstronomyPODViewProtocol {
+  
+    
     func errorInloadingMethods(errorMessage: String) {
         debugPrint(errorMessage)
     }
     func reloadData() {
         tableView.reloadData()
+    }
+    
+    func showAPIError(errorMessage: String) {
+        alert(title: "Error", message: errorMessage)
     }
 }
 
@@ -95,6 +101,8 @@ extension AstronomyPODViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
 
 extension AstronomyPODViewController: UITableViewDelegate {
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

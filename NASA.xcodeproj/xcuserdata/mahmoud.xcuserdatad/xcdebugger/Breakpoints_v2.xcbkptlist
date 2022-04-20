@@ -7,64 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "96A9064A-7E2D-4D0D-B52F-C8FA47777C9E"
+            uuid = "C7B82001-2C20-457F-865E-8E4F389314C7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NASATests/NASATests.swift"
+            filePath = "NASA/Scenes/AstronomyPOD/AstronomyPODViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "testGetFormattedDate()"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "96A9064A-7E2D-4D0D-B52F-C8FA47777C9E - 2b969132a9f60e4b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NASATests.NASATests.testGetFormattedDate() -&gt; ()"
-                  moduleName = "NASATests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mahmoud/Documents/NASA/NASATests/NASATests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "129">
-               </Location>
-               <Location
-                  uuid = "96A9064A-7E2D-4D0D-B52F-C8FA47777C9E - 2b969132a9f60e4b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NASATests.NASATests.testGetFormattedDate() -&gt; ()"
-                  moduleName = "NASATests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mahmoud/Documents/NASA/NASATests/NASATests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "153">
-               </Location>
-               <Location
-                  uuid = "96A9064A-7E2D-4D0D-B52F-C8FA47777C9E - 2b969132a9f60e4b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NASATests.NASATests.testGetFormattedDate() -&gt; ()"
-                  moduleName = "NASATests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mahmoud/Documents/NASA/NASATests/NASATests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "151">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07F88AC3-498A-46EF-9FAA-0687BA454695"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NASA/Scenes/AstronomyPOD/AstronomyPODViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "reloadData()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

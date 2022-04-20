@@ -9,6 +9,7 @@ import Foundation
 
 class AstronomyPODPresenter  {
     
+    // MARK: - Variables
     weak var view: AstronomyPODViewProtocol?
     private let interactor: AstronomyPODInteractorProtocol
     let wirframe: AstronomyPODCoordinatorProtocol
@@ -35,18 +36,21 @@ class AstronomyPODPresenter  {
     }
 }
 
+// MARK: - AstronomyPODPresenterProtocol
+
 extension AstronomyPODPresenter: AstronomyPODPresenterProtocol {
-    
     var numberOfItems: Int {
         return astronomyPODItems.count
     }
     
-    // MARK: - Life Cycle
     func viewDidLoad() {
         fetchNewPhotos()
     }
     
     func fetchNewPhotos() {
+        print(startDaysValue,endDaysValue)
+        print(startDate.getFormattedDate(),
+            endDate.getFormattedDate())
         interactor.getAstronomyPOD(startDate: startDate.getFormattedDate(),
                                    endDate: endDate.getFormattedDate())
     }
@@ -61,6 +65,8 @@ extension AstronomyPODPresenter: AstronomyPODPresenterProtocol {
     }
 }
 
+// MARK: - AstronomyPODInteractorOutputProtocol
+
 extension AstronomyPODPresenter : AstronomyPODInteractorOutputProtocol {
     func astronomyPODLoadedSuccessfully(response: [PODResponse]) {
         
@@ -71,8 +77,7 @@ extension AstronomyPODPresenter : AstronomyPODInteractorOutputProtocol {
     }
     
     func astronomyPODLoadeFailed(error: AppError) {
-        view?.errorInloadingMethods(errorMessage: error.localizedDescription)
+        view?.showAPIError(errorMessage: error.localizedDescription)
       }
-    
 }
 
