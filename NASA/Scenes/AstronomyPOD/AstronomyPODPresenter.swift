@@ -16,7 +16,6 @@ class AstronomyPODPresenter  {
     private var astronomyPODItems = [PODCellViewModel]()
     private var startDaysValue: Int
     private var endDaysValue: Int
-    
     private var startDate: Date {
         return Date.changeDaysBy(days: startDaysValue)
     }
@@ -44,6 +43,7 @@ extension AstronomyPODPresenter: AstronomyPODPresenterProtocol {
     }
     
     func viewDidLoad() {
+        view?.startAnimating()
         fetchNewPhotos()
     }
     
@@ -66,10 +66,12 @@ extension AstronomyPODPresenter: AstronomyPODPresenterProtocol {
 
 extension AstronomyPODPresenter : AstronomyPODInteractorOutputProtocol {
     func astronomyPODLoadedSuccessfully(response: [PODResponse]) {
-        astronomyPODItems.append(contentsOf: response.reversed().map({PODCellViewModel(item: $0)}))
+        let sortedContent = response.sorted(by: {$0.date ?? "" > $1.date ?? ""})
+        astronomyPODItems.append(contentsOf: sortedContent.map({PODCellViewModel(item: $0)}))
         startDaysValue -= 10
         endDaysValue -= 10
         view?.reloadData()
+        view?.stopAnimating()
     }
     
     func astronomyPODLoadeFailed(error: AppError) {

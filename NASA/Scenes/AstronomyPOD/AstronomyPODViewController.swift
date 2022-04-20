@@ -11,7 +11,7 @@ class AstronomyPODViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     // MARK: - Variables
     var presenter: AstronomyPODPresenterProtocol
     var isLoadingStarted = true
@@ -57,8 +57,7 @@ class AstronomyPODViewController: UIViewController {
 
 // MARK: - AstronomyPODViewProtocol
 extension AstronomyPODViewController : AstronomyPODViewProtocol {
-  
-    
+ 
     func errorInloadingMethods(errorMessage: String) {
         debugPrint(errorMessage)
     }
@@ -69,6 +68,18 @@ extension AstronomyPODViewController : AstronomyPODViewProtocol {
     func errorInloadingData(errorMessage: String) {
         alert(title: "Error", message: errorMessage)
     }
+    
+    func startAnimating() {
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+    }
+    
+    func stopAnimating() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+
+    }
+    
 }
 
 // MARK: - Setup UI
@@ -110,5 +121,5 @@ extension AstronomyPODViewController: UITableViewDataSource {
 extension AstronomyPODViewController: UITableViewDelegate {
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
      presenter.didSelectRowAt(forIndex : indexPath)
-}
+ }
 }

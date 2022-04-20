@@ -34,11 +34,9 @@ class PODTableViewCell: UITableViewCell {
 
 extension PODTableViewCell: PODCellViewProtocol {
     func setItem(_ model: PODCellViewModel) {
-        //astronomyIV.downloaded(from: model.hdurl)
         dateValueLabel.text = model.date
         titleValueLabel.text = model.title
         astronomyIV?.setImage(imageURL: model.hdurl)
-
     }
 }
 
