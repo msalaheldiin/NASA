@@ -12,6 +12,8 @@ protocol AstronomyPODViewProtocol: AnyObject {
     var presenter: AstronomyPODPresenterProtocol {get set}
     func reloadData()
     func errorInloadingData(errorMessage: String)
+    func startAnimating()
+    func stopAnimating()
 }
 
 // MARK: - Presenter
