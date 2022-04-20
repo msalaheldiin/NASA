@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PODDetailsViewController: UIViewController {
     
@@ -50,7 +51,7 @@ extension PODDetailsViewController {
 // MARK: -  Extensions
 extension PODDetailsViewController : PODDetailsViewProtocol {
     func setupUI(item: PODCellViewModel) {
-        astronomyIV?.setImage(imageURL: item.hdurl)
+        astronomyIV?.kf.setImage(with: URL(string: item.hdurl))
         titleValueLabel.text = item.title
         detailsValueTextView.text = item.explanation
     }

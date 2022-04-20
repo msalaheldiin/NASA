@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PODTableViewCell: UITableViewCell {
     
@@ -36,8 +37,9 @@ extension PODTableViewCell: PODCellViewProtocol {
     func setItem(_ model: PODCellViewModel) {
         dateValueLabel.text = model.date
         titleValueLabel.text = model.title
-        astronomyIV?.setImage(imageURL: model.hdurl)
-    }
+        astronomyIV.kf.indicatorType = .activity
+        astronomyIV?.kf.setImage(with: URL(string: model.hdurl))
+     }
 }
 
 

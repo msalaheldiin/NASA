@@ -25,7 +25,6 @@
 		1EB208DB2806210A0056587D /* PODDetailsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208DA2806210A0056587D /* PODDetailsContract.swift */; };
 		1EB208DE2806345C0056587D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208DD2806345C0056587D /* NetworkManager.swift */; };
 		1EB208E1280634D70056587D /* AppURLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208E0280634D70056587D /* AppURLS.swift */; };
-		1EB208E42806352A0056587D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208E32806352A0056587D /* UIImageView+Extension.swift */; };
 		1EB208E72806399E0056587D /* PODTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208E52806399E0056587D /* PODTableViewCell.swift */; };
 		1EB208E82806399E0056587D /* PODTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB208E62806399E0056587D /* PODTableViewCell.xib */; };
 		1EB208F028076CD10056587D /* PODCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208EF28076CD10056587D /* PODCellViewModel.swift */; };
@@ -50,10 +49,10 @@
 		1EF31097280F43FB0052D574 /* PODDetailsPresnter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208D6280620C40056587D /* PODDetailsPresnter.swift */; };
 		1EF31098280F44010052D574 /* PODDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208D8280620DF0056587D /* PODDetailsInteractor.swift */; };
 		1EF31099280F44130052D574 /* AppURLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208E0280634D70056587D /* AppURLS.swift */; };
-		1EF3109A280F441E0052D574 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB208E32806352A0056587D /* UIImageView+Extension.swift */; };
 		1EF310A628108A3E0052D574 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF310A528108A3E0052D574 /* UIViewController+Extension.swift */; };
 		1EF310A72810925F0052D574 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF310A528108A3E0052D574 /* UIViewController+Extension.swift */; };
 		1EF310A9281093C80052D574 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF310A8281093C80052D574 /* Mocks.swift */; };
+		1EF310B62810C2A40052D574 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1EF310B52810C2A40052D574 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +86,6 @@
 		1EB208DA2806210A0056587D /* PODDetailsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PODDetailsContract.swift; sourceTree = "<group>"; };
 		1EB208DD2806345C0056587D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1EB208E0280634D70056587D /* AppURLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURLS.swift; sourceTree = "<group>"; };
-		1EB208E32806352A0056587D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		1EB208E52806399E0056587D /* PODTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PODTableViewCell.swift; sourceTree = "<group>"; };
 		1EB208E62806399E0056587D /* PODTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PODTableViewCell.xib; sourceTree = "<group>"; };
 		1EB208EF28076CD10056587D /* PODCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PODCellViewModel.swift; sourceTree = "<group>"; };
@@ -105,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EF310B62810C2A40052D574 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +233,6 @@
 		1EB208E2280635070056587D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1EB208E32806352A0056587D /* UIImageView+Extension.swift */,
 				1EB208F5280A3B820056587D /* Date+Extension.swift */,
 				1EF310A528108A3E0052D574 /* UIViewController+Extension.swift */,
 			);
@@ -291,6 +289,9 @@
 			dependencies = (
 			);
 			name = NASA;
+			packageProductDependencies = (
+				1EF310B52810C2A40052D574 /* Kingfisher */,
+			);
 			productName = NASA;
 			productReference = 1EB208A628061B9C0056587D /* NASA.app */;
 			productType = "com.apple.product-type.application";
@@ -341,6 +342,9 @@
 				Base,
 			);
 			mainGroup = 1EB2089D28061B9C0056587D;
+			packageReferences = (
+				1EF310B42810C2A40052D574 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 1EB208A728061B9C0056587D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -378,7 +382,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EB208E42806352A0056587D /* UIImageView+Extension.swift in Sources */,
 				1EB208D9280620DF0056587D /* PODDetailsInteractor.swift in Sources */,
 				1EB208AA28061B9C0056587D /* AppDelegate.swift in Sources */,
 				1EB208DB2806210A0056587D /* PODDetailsContract.swift in Sources */,
@@ -424,7 +427,6 @@
 				1EF3108D280F422F0052D574 /* AstronomyPODٍRouter.swift in Sources */,
 				1EF31094280F43E60052D574 /* PODTableViewCell.swift in Sources */,
 				1EF31089280F40460052D574 /* AstronomyPODInteractor.swift in Sources */,
-				1EF3109A280F441E0052D574 /* UIImageView+Extension.swift in Sources */,
 				1EF3108A280F405F0052D574 /* AstronomyPODContract.swift in Sources */,
 				1EF31097280F43FB0052D574 /* PODDetailsPresnter.swift in Sources */,
 			);
@@ -687,6 +689,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1EF310B42810C2A40052D574 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1EF310B52810C2A40052D574 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EF310B42810C2A40052D574 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1EB2089E28061B9C0056587D /* Project object */;
 }
