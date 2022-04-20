@@ -33,6 +33,10 @@ class AstronomyPODViewController: UIViewController {
         setupTableView()
         presenter.viewDidLoad()
     }
+    override func viewDidLayoutSubviews() {
+         super.viewDidLayoutSubviews()
+        tableView.delegate = self
+    }
     
     // MARK: - Paging
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -79,7 +83,6 @@ extension AstronomyPODViewController {
         tableView.rowHeight = 100
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.dataSource = self
-        tableView.delegate = self
     }
 }
 

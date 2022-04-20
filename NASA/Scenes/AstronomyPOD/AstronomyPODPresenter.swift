@@ -48,9 +48,6 @@ extension AstronomyPODPresenter: AstronomyPODPresenterProtocol {
     }
     
     func fetchNewPhotos() {
-        print(startDaysValue,endDaysValue)
-        print(startDate.getFormattedDate(),
-            endDate.getFormattedDate())
         interactor.getAstronomyPOD(startDate: startDate.getFormattedDate(),
                                    endDate: endDate.getFormattedDate())
     }
@@ -69,7 +66,6 @@ extension AstronomyPODPresenter: AstronomyPODPresenterProtocol {
 
 extension AstronomyPODPresenter : AstronomyPODInteractorOutputProtocol {
     func astronomyPODLoadedSuccessfully(response: [PODResponse]) {
-        
         astronomyPODItems.append(contentsOf: response.reversed().map({PODCellViewModel(item: $0)}))
         startDaysValue -= 10
         endDaysValue -= 10

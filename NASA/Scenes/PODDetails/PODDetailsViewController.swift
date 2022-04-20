@@ -50,8 +50,8 @@ extension PODDetailsViewController {
 // MARK: -  Extensions
 extension PODDetailsViewController : PODDetailsViewProtocol {
     func setupUI(item: PODCellViewModel) {
+        astronomyIV?.setImage(imageURL: item.hdurl)
         titleValueLabel.text = item.title
-        astronomyIV.downloaded(from: item.hdurl)
         detailsValueTextView.text = item.explanation
     }
 }
