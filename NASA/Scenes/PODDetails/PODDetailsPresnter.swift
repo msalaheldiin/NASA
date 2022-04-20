@@ -10,11 +10,13 @@ import Foundation
 
 class PODDetailsPresnter  {
     
+    // MARK: - Variables
     weak var view: PODDetailsViewProtocol?
     private let interactor: PODDetailsInteractorProtocol
     let wirframe: PODDetailsCoordinatorProtocol
     private var item: PODCellViewModel
     
+    // MARK: - Init
     init(interactor: PODDetailsInteractorProtocol,  wirframe: PODDetailsCoordinatorProtocol, item: PODCellViewModel) {
         self.interactor = interactor
         self.wirframe = wirframe
@@ -22,12 +24,14 @@ class PODDetailsPresnter  {
     }
 }
 
+// MARK: - PODDetailsPresenterProtocol
 extension PODDetailsPresnter: PODDetailsPresenterProtocol {
     func viewDidLoad() {
         view?.setupUI(item: item)
     }
 }
 
+// MARK: - PODDetailsInteractorOutputProtocol
 extension PODDetailsPresnter : PODDetailsInteractorOutputProtocol {
     
 }

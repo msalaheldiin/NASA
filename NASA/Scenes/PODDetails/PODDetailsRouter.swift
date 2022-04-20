@@ -13,7 +13,11 @@ import UIKit
 
 class PODDetailsCoordinator: PODDetailsCoordinatorProtocol {
     
+    // MARK: - Variables
     let navigationController: UINavigationController
+    
+    // MARK: - Init
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }

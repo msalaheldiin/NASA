@@ -33,6 +33,10 @@ class AstronomyPODViewController: UIViewController {
         setupTableView()
         presenter.viewDidLoad()
     }
+    override func viewDidLayoutSubviews() {
+         super.viewDidLayoutSubviews()
+        tableView.delegate = self
+    }
     
     // MARK: - Paging
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -41,7 +45,6 @@ class AstronomyPODViewController: UIViewController {
         
         if offsetY > contentHeight - scrollView.frame.height {
             if presenter.numberOfItems < 50 && isLoadingStarted {
-                print(presenter.numberOfItems,"numberOfItems")
             isLoadingStarted = false
             presenter.fetchNewPhotos()
         }
@@ -54,11 +57,17 @@ class AstronomyPODViewController: UIViewController {
 
 // MARK: - AstronomyPODViewProtocol
 extension AstronomyPODViewController : AstronomyPODViewProtocol {
+  
+    
     func errorInloadingMethods(errorMessage: String) {
         debugPrint(errorMessage)
     }
     func reloadData() {
         tableView.reloadData()
+    }
+    
+    func errorInloadingData(errorMessage: String) {
+        alert(title: "Error", message: errorMessage)
     }
 }
 
@@ -74,7 +83,6 @@ extension AstronomyPODViewController {
         tableView.rowHeight = 100
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.dataSource = self
-        tableView.delegate = self
     }
 }
 
@@ -96,6 +104,8 @@ extension AstronomyPODViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
 
 extension AstronomyPODViewController: UITableViewDelegate {
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

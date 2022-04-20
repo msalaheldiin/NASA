@@ -8,20 +8,20 @@
 import UIKit
 
 class PODDetailsViewController: UIViewController {
-
+    
     // MARK: - Outlets
     @IBOutlet weak var detailsValueTextView: UITextView!
     @IBOutlet weak var astronomyIV: UIImageView!
     @IBOutlet weak var titleValueLabel: UILabel!
- 
+    
     
     // MARK: - Variables
     var presenter: PODDetailsPresenterProtocol
     
     // MARK: - Init
-
+    
     init(presenter: PODDetailsPresenterProtocol) {
-    self.presenter = presenter
+        self.presenter = presenter
         super.init(nibName:"\(PODDetailsViewController.self)", bundle: nil)
     }
     
@@ -31,19 +31,17 @@ class PODDetailsViewController: UIViewController {
     
     
     // MARK: -  Lify Cycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         presenter.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
 }
 
 // MARK: - Setup UI
 extension PODDetailsViewController {
-    
     private func setupNavigationBar() {
         title = "Photo Details"
     }
@@ -52,8 +50,8 @@ extension PODDetailsViewController {
 // MARK: -  Extensions
 extension PODDetailsViewController : PODDetailsViewProtocol {
     func setupUI(item: PODCellViewModel) {
+        astronomyIV?.setImage(imageURL: item.hdurl)
         titleValueLabel.text = item.title
-        astronomyIV.downloaded(from: item.hdurl)
         detailsValueTextView.text = item.explanation
     }
 }
