@@ -58,11 +58,10 @@ class AstronomyPODViewController: UIViewController {
 // MARK: - AstronomyPODViewProtocol
 extension AstronomyPODViewController : AstronomyPODViewProtocol {
  
-    func errorInloadingMethods(errorMessage: String) {
-        debugPrint(errorMessage)
-    }
     func reloadData() {
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+             }
     }
     
     func errorInloadingData(errorMessage: String) {
@@ -78,8 +77,7 @@ extension AstronomyPODViewController : AstronomyPODViewProtocol {
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
 
-    }
-    
+    }    
 }
 
 // MARK: - Setup UI

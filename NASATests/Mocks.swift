@@ -25,6 +25,7 @@ class MockFailurInteractor: AstronomyPODInteractorProtocol {
 }
 
 class AstronomyPODViewMock: AstronomyPODViewProtocol {
+    
     var presenter: AstronomyPODPresenterProtocol
     init(presenter: AstronomyPODPresenterProtocol) {
         self.presenter = presenter
@@ -39,4 +40,11 @@ class AstronomyPODViewMock: AstronomyPODViewProtocol {
     func errorInloadingData(errorMessage: String) {
         errorHappended = true
     }
+    func startAnimating() {
+       
+   }
+
+   func stopAnimating() {
+       
+   }
 }
